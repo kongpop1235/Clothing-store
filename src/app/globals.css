@@ -10,15 +10,16 @@
     border-color: #f1f1f3;
 }
 
+.navbar {
+    padding: 20px 162px;
+    border-color: #f1f1f3;
+}
+
 .cart-button {
     width: 54px;
     height: 54px;
 }
 
-.navbar {
-    padding: 20px 162px;
-    border-color: #f1f1f3;
-}
 
 .button-yellow {
     transition: background-color 0.3s ease;
