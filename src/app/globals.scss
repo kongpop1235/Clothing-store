@@ -1,0 +1,83 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.bg-FFD400{
+  background-color: #ffd400;
+}
+.border-F1F1F3{
+  border-color: #f1f1f3;
+}
+.bg-F1F1F3{
+  background-color: #F1F1F3;
+}
+.bg-F7F7F8{
+  background-color: #F7F7F8;
+}
+.text-98989A{
+  color: #98989A;
+}
+.text-656567{
+  color: #656567;
+}
+.flip{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+.navbar{
+  padding: 20px 162px;
+  border-color: #f1f1f3;
+}
+.cart-button{
+  width: 54px;
+  height: 54px;
+}
+.button-defult{
+  transition: background-color 0.3s ease;
+}
+.button-defult:hover{
+  background-color: #f1f1f3;
+}
+
+.button-change-item{
+  height: 100%;
+  width: initial;
+  transition: background-color 0.3s ease;
+  #styled-element{
+    stroke: #656567;
+    transition: stroke 0.3s ease;
+  }
+}
+
+.button-change-item:hover{
+  background-color: #262626;
+  #styled-element{
+      stroke:white
+  }
+}
+
+.button-main-page{
+  width: 183px;
+  height: 63px;
+}
+.home-page-main{
+  margin-top: 100px;
+}
+.home-page-main-image-area{
+  width: 673px;
+  height: auto;
+}
+.home-page-main-contener{
+  height: 346px;
+  width: 100%;
+}
+
+.home-page-main-p-head {
+  font-size: 30px;
+}
+
+.home-page-main-p-text {
+  font-size: 18;
+  font-widht: 400;
+  color: #656567;
+}

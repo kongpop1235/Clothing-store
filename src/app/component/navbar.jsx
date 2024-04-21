@@ -8,12 +8,12 @@ export default function Home() {
       <div className="flex justify-between navbar border-b-2">
         <div className="flex">
           <Link href="/">
-            <button className="rounded-full py-3.5 px-5 mr-2.5 align-middle border border-F1F1F3 button-yellow">
+            <button className="rounded-full py-3.5 px-5 mr-2.5 align-middle border border-F1F1F3 button-defult">
               Home
             </button>
           </Link>
           <Link href="/products">
-            <button className="rounded-full py-3.5 px-5 align-middle border border-F1F1F3 button-yellow">
+            <button className="rounded-full py-3.5 px-5 align-middle border border-F1F1F3 button-defult">
               Products
             </button>
           </Link>
@@ -32,7 +32,7 @@ export default function Home() {
               />
             </div>
             <Link href="/contact">
-              <button className="rounded-full py-3.5 px-5 align-middle border border-F1F1F3 text-nowrap">
+              <button className="rounded-full py-3.5 px-5 align-middle border border-F1F1F3 text-nowrap button-defult">
                 Contact Support
               </button>
             </Link>
