@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <main className='min-[1700px]:mx-40 home-page-main'>
             <div className='grid grid-cols-1 gap-[200px]'>
-                <div className='grid grid-cols-5 gap-20 mb-[200px]'>
+                <div className='grid grid-cols-5 gap-20'>
                     <div className='h-full grid col-span-3 content-between justify-between'>
                         <div className=''>
                             <div className='flex relative justify-between'>
@@ -106,7 +106,7 @@ export default function Home() {
                     </div>
                 </div>
                 {/* Discover fashion */}
-                <div className='grid grid-cols-1 gap-y-20 mb-[200px]'>
+                <div className='grid grid-cols-1 gap-y-20'>
                     <div className='flex justify-between'>
                         <div className='mr-[300px]'>
                             <div className='flex mb-9'>
@@ -208,6 +208,76 @@ export default function Home() {
                             <div>
                                 <p className='text-xl font-semibold mt-[30px]'>Cozy Comfort Hoodie</p>
                                 <p className='text-lg font-medium text-4C4C4D'>$39.99</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* The Klothink Experience */}
+                <div className='grid grid-cols-1 gap-y-20 mb-[200px]'>
+                    <div className=''>
+                        <div className='flex mb-9'>
+                            <h2 className='uppercase text-5xl font-semibold mr-2'>The Klothink Experience.</h2>
+                            <p className='uppercase text-98989A text-nowrap text-right self-start'>About Us</p>
+                        </div>
+                        <p className='text-656567 mt-6'>At Klothink, we breathe life into fashion, blending creativity with commitment. Our journey is fueled by a dedication to delivering unparalleled style and quality. Join us in redefining fashion and embracing a community where every purchase tells a story.</p>
+                    </div>
+                    <div className='grid grid-rows-2 gap-[30px] p-[30px] bg-FCFCFD border border-F7F7F8 rounded-[20px]'>
+                        <div className='grid grid-cols-3 gap-[30px] bg-FCFCFD'>
+                            <div className='bg-white border border-F1F1F3 rounded-[20px] p-10'>
+                                <div className='flex mb-6'>
+                                    <div className='bottom-0 right-0 rounded-full bg-FFD400 p-3.5 mr-4 cart-item-button grid content-center justify-center cursor-pointer'>
+                                        <Image src='/icon/star.svg' alt='cart icon' width={24} height={24} />
+                                    </div>
+                                    <h3 className='self-center font-semibold text-xl'>Passionate Craftsmanship</h3>
+                                </div>
+                                <p className='text-656567 font-normal'>Every garment at Klothink is crafted with passion, reflecting our commitment to quality and innovation.</p>
+                            </div>
+                            <div className='bg-white border border-F1F1F3 rounded-[20px] p-10'>
+                                <div className='flex mb-6'>
+                                    <div className='bottom-0 right-0 rounded-full bg-FFD400 p-3.5 mr-4 cart-item-button grid content-center justify-center cursor-pointer'>
+                                        <Image src='/icon/Megaphone.svg' alt='cart icon' width={24} height={24} />
+                                    </div>
+                                    <h3 className='self-center font-semibold text-xl'>Passionate Craftsmanship</h3>
+                                </div>
+                                <p className='text-656567 font-normal'>Every garment at Klothink is crafted with passion, reflecting our commitment to quality and innovation.</p>
+                            </div>
+                            <div className='bg-white border border-F1F1F3 rounded-[20px] p-10'>
+                                <div className='flex mb-6'>
+                                    <div className='bottom-0 right-0 rounded-full bg-FFD400 p-3.5 mr-4 cart-item-button grid content-center justify-center cursor-pointer'>
+                                        <Image src='/icon/Lifebuoy.svg' alt='cart icon' width={24} height={24} />
+                                    </div>
+                                    <h3 className='self-center font-semibold text-xl'>Passionate Craftsmanship</h3>
+                                </div>
+                                <p className='text-656567 font-normal'>Every garment at Klothink is crafted with passion, reflecting our commitment to quality and innovation.</p>
+                            </div>
+                        </div>
+                        <div className='grid grid-cols-3 gap-[30px] bg-FCFCFD'>
+                            <div className='bg-white border border-F1F1F3 rounded-[20px] p-10'>
+                                <div className='flex mb-6'>
+                                    <div className='bottom-0 right-0 rounded-full bg-FFD400 p-3.5 mr-4 cart-item-button grid content-center justify-center cursor-pointer'>
+                                        <Image src='/icon/lamp.svg' alt='cart icon' width={24} height={24} />
+                                    </div>
+                                    <h3 className='self-center font-semibold text-xl'>Passionate Craftsmanship</h3>
+                                </div>
+                                <p className='text-656567 font-normal'>Every garment at Klothink is crafted with passion, reflecting our commitment to quality and innovation.</p>
+                            </div>
+                            <div className='bg-white border border-F1F1F3 rounded-[20px] p-10'>
+                                <div className='flex mb-6'>
+                                    <div className='bottom-0 right-0 rounded-full bg-FFD400 p-3.5 mr-4 cart-item-button grid content-center justify-center cursor-pointer'>
+                                        <Image src='/icon/constellation.svg' alt='cart icon' width={24} height={24} />
+                                    </div>
+                                    <h3 className='self-center font-semibold text-xl'>Passionate Craftsmanship</h3>
+                                </div>
+                                <p className='text-656567 font-normal'>Every garment at Klothink is crafted with passion, reflecting our commitment to quality and innovation.</p>
+                            </div>
+                            <div className='bg-white border border-F1F1F3 rounded-[20px] p-10'>
+                                <div className='flex mb-6'>
+                                    <div className='bottom-0 right-0 rounded-full bg-FFD400 p-3.5 mr-4 cart-item-button grid content-center justify-center cursor-pointer'>
+                                        <Image src='/icon/Sun.svg' alt='cart icon' width={24} height={24} />
+                                    </div>
+                                    <h3 className='self-center font-semibold text-xl'>Passionate Craftsmanship</h3>
+                                </div>
+                                <p className='text-656567 font-normal'>Every garment at Klothink is crafted with passion, reflecting our commitment to quality and innovation.</p>
                             </div>
                         </div>
                     </div>
