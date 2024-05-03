@@ -1,7 +1,58 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import React from 'react'
+
 export default function Home() {
+    const filteredItems = [
+        {
+            id: 1,
+            img: 'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600',
+            description: 'camera',
+            price: 200,
+        },
+        {
+            id: 2,
+            img: 'https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=600',
+            description: 'Phone',
+            price: 100,
+        },
+        {
+            id: 3,
+            img: 'https://images.pexels.com/photos/12753820/pexels-photo-12753820.jpeg?auto=compress&cs=tinysrgb&w=600',
+            description: 'Laptop',
+            price: 500,
+        },
+        {
+            id: 4,
+            img: 'https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=600',
+            description: 'Headephone',
+            price: 40,
+        },
+        {
+            id: 5,
+            img: 'https://images.pexels.com/photos/163117/keyboard-white-computer-keyboard-desktop-163117.jpeg?auto=compress&cs=tinysrgb&w=600',
+            description: 'Keyboard',
+            price: 140,
+        },
+        {
+            id: 6,
+            img: 'https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&w=600',
+            description: 'Gaming Mouse',
+            price: 140,
+        },
+    ]
+
+    const slideLeft = () => {
+        let slider = document.getElementById('slider')
+        slider.scrollLeft = slider.scrollLeft - 376.5
+    }
+
+    const slideRight = () => {
+        let slider = document.getElementById('slider')
+        slider.scrollLeft = slider.scrollLeft + 376.5
+    }
     return (
         <main className='min-[1700px]:mx-40 home-page-main'>
             <div className='grid grid-cols-1 gap-[200px]'>
@@ -137,8 +188,8 @@ export default function Home() {
                             <button className='rounded-full bg-white border border-F1F1F3 px-6 py-3.5 content-center justify-center font-semibold'>Party</button>
                         </div>
                     </div>
-                    <div class='flex mb-3 pb-20 gap-8 scroll-pl-6 snap-x w-full overflow-x-auto'>
-                        <div class=' snap-start shrink-0'>
+                    <div className='flex mb-3 pb-20 gap-8 scroll-pl-6 snap-x w-full overflow-x-auto'>
+                        <div className=' snap-start shrink-0'>
                             <div className='relative'>
                                 <div className='absolute bottom-0 right-0 rounded-full bg-FFD400 p-3.5 cart-item-button grid content-center justify-center cursor-pointer'>
                                     <Image src='/home/shopping_cart_item.svg' alt='cart icon' width={24} height={24} />
@@ -150,7 +201,7 @@ export default function Home() {
                                 <p className='text-lg font-medium text-4C4C4D'>$49.99</p>
                             </div>
                         </div>
-                        <div class=' snap-start shrink-0'>
+                        <div className=' snap-start shrink-0'>
                             <div className='relative'>
                                 <div className='absolute bottom-0 right-0 rounded-full bg-FFD400 p-3.5 cart-item-button grid content-center justify-center cursor-pointer'>
                                     <Image src='/home/shopping_cart_item.svg' alt='cart icon' width={24} height={24} />
@@ -162,7 +213,7 @@ export default function Home() {
                                 <p className='text-lg font-medium text-4C4C4D'>$39.99</p>
                             </div>
                         </div>
-                        <div class=' snap-start shrink-0'>
+                        <div className=' snap-start shrink-0'>
                             <div className='relative'>
                                 <div className='absolute bottom-0 right-0 rounded-full bg-FFD400 p-3.5 cart-item-button grid content-center justify-center cursor-pointer'>
                                     <Image src='/home/shopping_cart_item.svg' alt='cart icon' width={24} height={24} />
@@ -174,7 +225,7 @@ export default function Home() {
                                 <p className='text-lg font-medium text-4C4C4D'>$39.99</p>
                             </div>
                         </div>
-                        <div class=' snap-start shrink-0'>
+                        <div className=' snap-start shrink-0'>
                             <div className='relative'>
                                 <div className='absolute bottom-0 right-0 rounded-full bg-FFD400 p-3.5 cart-item-button grid content-center justify-center cursor-pointer'>
                                     <Image src='/home/shopping_cart_item.svg' alt='cart icon' width={24} height={24} />
@@ -186,7 +237,7 @@ export default function Home() {
                                 <p className='text-lg font-medium text-4C4C4D'>$39.99</p>
                             </div>
                         </div>
-                        <div class=' snap-start shrink-0'>
+                        <div className=' snap-start shrink-0'>
                             <div className='relative'>
                                 <div className='absolute bottom-0 right-0 rounded-full bg-FFD400 p-3.5 cart-item-button grid content-center justify-center cursor-pointer'>
                                     <Image src='/home/shopping_cart_item.svg' alt='cart icon' width={24} height={24} />
@@ -198,7 +249,7 @@ export default function Home() {
                                 <p className='text-lg font-medium text-4C4C4D'>$39.99</p>
                             </div>
                         </div>
-                        <div class=' snap-start shrink-0'>
+                        <div className=' snap-start shrink-0'>
                             <div className='relative'>
                                 <div className='absolute bottom-0 right-0 rounded-full bg-FFD400 p-3.5 cart-item-button grid content-center justify-center cursor-pointer'>
                                     <Image src='/home/shopping_cart_item.svg' alt='cart icon' width={24} height={24} />
@@ -278,6 +329,118 @@ export default function Home() {
                                     <h3 className='self-center font-semibold text-xl'>Passionate Craftsmanship</h3>
                                 </div>
                                 <p className='text-656567 font-normal'>Every garment at Klothink is crafted with passion, reflecting our commitment to quality and innovation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Customers Love */}
+                <div className='grid grid-cols-1 gap-y-20 mb-[200px]'>
+                    <div className='flex justify-between'>
+                        <div className='mr-[300px]'>
+                            <div className='flex mb-9'>
+                                <h2 className='uppercase text-5xl font-semibold mr-2'>Customers Love.</h2>
+                                <p className='uppercase text-98989A text-nowrap text-right self-start'>Testimonials</p>
+                            </div>
+                            <p className='text-656567 mt-6'>At Klothink, our customers are the heartbeat of our brand. Explore the heartfelt testimonials shared by those who have experienced the magic of Klothink fashion.</p>
+                        </div>
+                        <div className='self-center'>
+                            <button className='bg-FFD400 rounded-full px-6 py-5 content-center justify-center font-semibold'>
+                                <p className='ml-2 text-nowrap'>View All Testimonials</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div className='relative bg-FCFCFD border border-F7F7F8 rounded-[20px]'>
+                        <div className='absolute w-full h-full btns flex'>
+                            {/* <button className='absolute -left-[35px] self-center' title='scroll' onClick={slideLeft}>
+                                left
+                            </button> */}
+                            <svg className='absolute -left-[35px] self-center cursor-pointer arrow-left' onClick={slideLeft} width='58' height='58' viewBox='0 0 58 58' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                <rect x='0.5' y='0.5' width='57' height='57' rx='28.5' fill='white' />
+                                <rect x='0.5' y='0.5' width='57' height='57' rx='28.5' stroke='#B3B3B3' />
+                                <path d='M32.75 21.5L25.25 29L32.75 36.5' stroke='#656567' stroke-width='2' />
+                            </svg>
+                            <svg className='absolute -right-[35px] self-center cursor-pointer arrow-right' onClick={slideRight} width='58' height='58' viewBox='0 0 58 58' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                <rect x='57.5' y='57.5' width='57' height='57' rx='28.5' transform='rotate(180 57.5 57.5)' fill='white' />
+                                <rect x='57.5' y='57.5' width='57' height='57' rx='28.5' transform='rotate(180 57.5 57.5)' stroke='#B3B3B3' />
+                                <path d='M25.25 36.5L32.75 29L25.25 21.5' stroke='#656567' stroke-width='2' />
+                            </svg>
+                        </div>
+
+                        <div className='flex bg-FCFCFD p-[30px] gap-8 scroll-pl-6 snap-x w-full overflow-x-auto' id='slider'>
+                            <div className='border border-F1F1F3 rounded-[20px] p-[50px] snap-start shrink-0 w-[492px] h-[291px] grid grid-cols-1 content-between'>
+                                <div className='flex justify-between'>
+                                    <div className='flex'>
+                                        <img className='mr-[15px]' src='/customer/customer01.png' alt='item1' width={70} height={70} />
+                                        <div className='self-center'>
+                                            <p className='pb-1.5'>Sarah Thompson</p>
+                                            <Image src='/icon/5star.svg' alt='cart icon' width={120} height={20} />
+                                        </div>
+                                    </div>
+                                    <Image src='/icon/doubleQuote.png' alt='cart icon' width={60} height={60} />
+                                </div>
+                                <div>
+                                    <p className=''>Klothink exceeded my expectations. The gown's quality and design made me feel like a queen. Fast shipping, too!</p>
+                                </div>
+                            </div>
+                            <div className='border border-F1F1F3 p-[50px] snap-start shrink-0 w-[492px] h-[291px] grid grid-cols-1 content-between'>
+                                <div className='flex justify-between'>
+                                    <div className='flex'>
+                                        <img className='mr-[15px]' src='/customer/customer01.png' alt='item1' width={70} height={70} />
+                                        <div className='self-center'>
+                                            <p className='pb-1.5'>Sarah Thompson</p>
+                                            <Image src='/icon/5star.svg' alt='cart icon' width={120} height={20} />
+                                        </div>
+                                    </div>
+                                    <Image src='/icon/doubleQuote.png' alt='cart icon' width={60} height={60} />
+                                </div>
+                                <div>
+                                    <p className=''>Klothink exceeded my expectations. The gown's quality and design made me feel like a queen. Fast shipping, too!</p>
+                                </div>
+                            </div>
+                            <div className='border border-F1F1F3 p-[50px] snap-start shrink-0 w-[492px] h-[291px] grid grid-cols-1 content-between'>
+                                <div className='flex justify-between'>
+                                    <div className='flex'>
+                                        <img className='mr-[15px]' src='/customer/customer01.png' alt='item1' width={70} height={70} />
+                                        <div className='self-center'>
+                                            <p className='pb-1.5'>Sarah Thompson</p>
+                                            <Image src='/icon/5star.svg' alt='cart icon' width={120} height={20} />
+                                        </div>
+                                    </div>
+                                    <Image src='/icon/doubleQuote.png' alt='cart icon' width={60} height={60} />
+                                </div>
+                                <div>
+                                    <p className=''>Klothink exceeded my expectations. The gown's quality and design made me feel like a queen. Fast shipping, too!</p>
+                                </div>
+                            </div>
+                            <div className='border border-F1F1F3 p-[50px] snap-start shrink-0 w-[492px] h-[291px] grid grid-cols-1 content-between'>
+                                <div className='flex justify-between'>
+                                    <div className='flex'>
+                                        <img className='mr-[15px]' src='/customer/customer01.png' alt='item1' width={70} height={70} />
+                                        <div className='self-center'>
+                                            <p className='pb-1.5'>Sarah Thompson</p>
+                                            <Image src='/icon/5star.svg' alt='cart icon' width={120} height={20} />
+                                        </div>
+                                    </div>
+                                    <Image src='/icon/doubleQuote.png' alt='cart icon' width={60} height={60} />
+                                </div>
+                                <div>
+                                    <p className=''>Klothink exceeded my expectations. The gown's quality and design made me feel like a queen. Fast shipping, too!</p>
+                                </div>
+                            </div>
+                            <div className='border border-F1F1F3 p-[50px] snap-start shrink-0 w-[492px] h-[291px] grid grid-cols-1 content-between'>
+                                <div className='flex justify-between'>
+                                    <div className='flex'>
+                                        <img className='mr-[15px]' src='/customer/customer01.png' alt='item1' width={70} height={70} />
+                                        <div className='self-center'>
+                                            <p className='pb-1.5'>Sarah Thompson</p>
+                                            <Image src='/icon/5star.svg' alt='cart icon' width={120} height={20} />
+                                        </div>
+                                    </div>
+                                    <Image src='/icon/doubleQuote.png' alt='cart icon' width={60} height={60} />
+                                </div>
+                                <div>
+                                    <p className=''>Klothink exceeded my expectations. The gown's quality and design made me feel like a queen. Fast shipping, too!</p>
+                                </div>
                             </div>
                         </div>
                     </div>
