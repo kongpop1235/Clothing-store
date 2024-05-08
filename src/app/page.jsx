@@ -3,46 +3,10 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import React from 'react'
+import { useState } from "react";
 
 export default function Home() {
-    const filteredItems = [
-        {
-            id: 1,
-            img: 'https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=600',
-            description: 'camera',
-            price: 200,
-        },
-        {
-            id: 2,
-            img: 'https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=600',
-            description: 'Phone',
-            price: 100,
-        },
-        {
-            id: 3,
-            img: 'https://images.pexels.com/photos/12753820/pexels-photo-12753820.jpeg?auto=compress&cs=tinysrgb&w=600',
-            description: 'Laptop',
-            price: 500,
-        },
-        {
-            id: 4,
-            img: 'https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=600',
-            description: 'Headephone',
-            price: 40,
-        },
-        {
-            id: 5,
-            img: 'https://images.pexels.com/photos/163117/keyboard-white-computer-keyboard-desktop-163117.jpeg?auto=compress&cs=tinysrgb&w=600',
-            description: 'Keyboard',
-            price: 140,
-        },
-        {
-            id: 6,
-            img: 'https://images.pexels.com/photos/2115256/pexels-photo-2115256.jpeg?auto=compress&cs=tinysrgb&w=600',
-            description: 'Gaming Mouse',
-            price: 140,
-        },
-    ]
+    const [openQuestionsDetail, setOpenQuestionsDetail] = useState([[false,false,false,false],[false,false,false,false],[false,false,false,false]]);
 
     const slideLeft = () => {
         let slider = document.getElementById('slider')
@@ -53,6 +17,14 @@ export default function Home() {
         let slider = document.getElementById('slider')
         slider.scrollLeft = slider.scrollLeft + 376.5
     }
+    
+    const updateOpenQuestionsDetail = (row,item) => {
+        const updated = [...openQuestionsDetail];
+        updated[row][item] = !updated[row][item];
+        setOpenQuestionsDetail(updated);
+    }
+
+
     return (
         <main className='min-[1700px]:mx-40 home-page-main'>
             <div className='grid grid-cols-1 gap-[200px]'>
@@ -264,7 +236,7 @@ export default function Home() {
                     </div>
                 </div>
                 {/* The Klothink Experience */}
-                <div className='grid grid-cols-1 gap-y-20 mb-[200px]'>
+                <div className='grid grid-cols-1 gap-y-20'>
                     <div className=''>
                         <div className='flex mb-9'>
                             <h2 className='uppercase text-5xl font-semibold mr-2'>The Klothink Experience.</h2>
@@ -334,7 +306,7 @@ export default function Home() {
                     </div>
                 </div>
                 {/* Customers Love */}
-                <div className='grid grid-cols-1 gap-y-20 mb-[200px]'>
+                <div className='grid grid-cols-1 gap-y-20'>
                     <div className='flex justify-between'>
                         <div className='mr-[300px]'>
                             <div className='flex mb-9'>
@@ -351,9 +323,6 @@ export default function Home() {
                     </div>
                     <div className='relative bg-FCFCFD border border-F7F7F8 rounded-[20px]'>
                         <div className='absolute w-full h-full btns flex'>
-                            {/* <button className='absolute -left-[35px] self-center' title='scroll' onClick={slideLeft}>
-                                left
-                            </button> */}
                             <svg className='absolute -left-[35px] self-center cursor-pointer arrow-left' onClick={slideLeft} width='58' height='58' viewBox='0 0 58 58' fill='none' xmlns='http://www.w3.org/2000/svg'>
                                 <rect x='0.5' y='0.5' width='57' height='57' rx='28.5' fill='white' />
                                 <rect x='0.5' y='0.5' width='57' height='57' rx='28.5' stroke='#B3B3B3' />
@@ -441,6 +410,164 @@ export default function Home() {
                                 <div>
                                     <p className=''>Klothink exceeded my expectations. The gown's quality and design made me feel like a queen. Fast shipping, too!</p>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Questions? We Have Answers */}
+                <div className='grid grid-cols-1 gap-y-20 mb-[200px]'>
+                    <div className='flex justify-between'>
+                        <div className='mr-[300px]'>
+                            <div className='flex mb-9'>
+                                <h2 className='uppercase text-5xl font-semibold mr-2'>Questions? We Have Answers.</h2>
+                                <p className='uppercase text-98989A text-nowrap text-right self-start'>FAQ</p>
+                            </div>
+                            <p className='text-656567 mt-6'>Ease into the world of Klothink with clarity. Our FAQs cover a spectrum of topics, ensuring you have the information you need for a seamless shopping experience.</p>
+                        </div>
+                        <div className='self-center'>
+                            <button className='bg-FFD400 rounded-full px-6 py-5 content-center justify-center font-semibold'>
+                                <p className='ml-2 text-nowrap'>View All Testimonials</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div className='flex uppercase text-98989A self-center content-end border-y border-F1F1F3 py-10 text-[20px]'>
+                        <p className='text-1A1A1A font-semibold cursor-pointer'>all</p>
+                        <div className='w-[1px] bg-F1F1F3 h-6 mx-5'></div>
+                        <p className='font-medium cursor-pointer'>ordering</p>
+                        <div className='w-[1px] bg-F1F1F3 h-6 mx-5'></div>
+                        <p className='font-medium cursor-pointer'>shipping</p>
+                        <div className='w-[1px] bg-F1F1F3 h-6 mx-5'></div>
+                        <p className='font-medium cursor-pointer'>returns</p>
+                        <div className='w-[1px] bg-F1F1F3 h-6 mx-5'></div>
+                        <p className='font-medium cursor-pointer'>customer Support</p>
+                    </div>
+                    <div className='grid grid-cols-3 gap-[30px]'>
+                        <div className='grid grid-cols-1 gap-[20px]'>
+                            <div
+                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[0][0] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
+                                onClick={() => updateOpenQuestionsDetail(0,0)}
+                            >
+                                <div className='flex justify-between mb-[30px]'>
+                                    <h3 className='font-medium text-lg'>Can I modify my order after placing it?</h3>
+                                    <Image src='/icon/push.svg' className={`transition-all duration-500 ${openQuestionsDetail[0][0] ? 'rotate-45' : ''}`} alt='push icon' width={14} height={14} />
+                                </div>
+                                <p className='font-weight text-lg'>
+                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!
+                                </p>
+                            </div>
+                            <div 
+                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[0][1] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
+                                onClick={() => updateOpenQuestionsDetail(0,1)}
+                            >
+                                <div className='flex justify-between mb-[30px]'>
+                                    <h3 className='font-medium text-lg'>How do I initiate a return?</h3>
+                                    <Image src='/icon/push.svg' className={openQuestionsDetail[0][1] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
+                                </div>
+                                <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
+                            </div>
+                            <div 
+                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[0][2] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
+                                onClick={() => updateOpenQuestionsDetail(0,2)}
+                            >
+                                <div className='flex justify-between mb-[30px]'>
+                                    <h3 className='font-medium text-lg'>How can I unsubscribe from the newsletter?</h3>
+                                    <Image src='/icon/push.svg' className={openQuestionsDetail[0][2] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
+                                </div>
+                                <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
+                            </div>
+                            <div 
+                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[0][3] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
+                                onClick={() => updateOpenQuestionsDetail(0,3)}
+                            >
+                                <div className='flex justify-between mb-[30px]'>
+                                    <h3 className='font-medium text-lg'>Do you offer exchanges for products?</h3>
+                                    <Image src='/icon/push.svg' className={openQuestionsDetail[0][3] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
+                                </div>
+                                <p className='font-weight text-lg'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit magnam, sed optio laudantium blanditiis eius libero. Quibusdam, repudiandae maiores vel, excepturi, laudantium atque deserunt ea provident aperiam voluptatem aliquid officiis.</p>
+                            </div>
+                        </div>
+                        <div className='grid grid-cols-1 gap-[20px]'>
+                            <div 
+                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[1][0] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
+                                onClick={() => updateOpenQuestionsDetail(1,0)}
+                            >
+                                <div className='flex justify-between mb-[30px]'>
+                                    <h3 className='font-medium text-lg'>How can I place an order on Klothink?</h3>
+                                    <Image src='/icon/push.svg' className={openQuestionsDetail[1][0] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
+                                </div>
+                                <p className='font-weight text-lg'>Ordering is easy! Simply browse our website, add items to your cart, and proceed to checkout. Follow the prompts to enter your details and complete your purchase.</p>
+                            </div>
+                            <div 
+                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[1][1] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
+                                onClick={() => updateOpenQuestionsDetail(1,1)}
+                            >
+                                <div className='flex justify-between mb-[30px]'>
+                                    <h3 className='font-medium text-lg'>What payment methods do you accept?</h3>
+                                    <Image src='/icon/push.svg' className={openQuestionsDetail[1][1] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
+                                </div>
+                                <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
+                            </div>
+                            <div 
+                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[1][2] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
+                                onClick={() => updateOpenQuestionsDetail(1,2)}
+                            >
+                                <div className='flex justify-between mb-[30px]'>
+                                    <h3 className='font-medium text-lg'>How can I track my order?</h3>
+                                    <Image src='/icon/push.svg' className={openQuestionsDetail[1][2] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
+                                </div>
+                                <p className='font-weight text-lg'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum debitis reprehenderit, nihil illo reiciendis pariatur atque, molestiae suscipit, quis ipsam at laboriosam dolor culpa et a necessitatibus. Quia, fugiat perspiciatis.</p>
+                            </div>
+                            <div 
+                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[1][3] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
+                                onClick={() => updateOpenQuestionsDetail(1,3)}
+                            >
+                                <div className='flex justify-between mb-[30px]'>
+                                    <h3 className='font-medium text-lg'>What is your shipping policy?</h3>
+                                    <Image src='/icon/push.svg' className={openQuestionsDetail[1][3] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
+                                </div>
+                                <p className='font-weight text-lg'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur facilis quisquam reiciendis blanditiis qui nobis ipsa corrupti sequi mollitia placeat explicabo perspiciatis, cum quaerat hic dolore illo saepe iusto accusantium?</p>
+                            </div>
+                        </div>
+                        <div className='grid grid-cols-1 gap-[20px]'>
+                            <div 
+                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[2][0] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
+                                onClick={() => updateOpenQuestionsDetail(2,0)}
+                            >
+                                <div className='flex justify-between mb-[30px]'>
+                                    <h3 className='font-medium text-lg'>Are there any additional fees for returns?</h3>
+                                    <Image src='/icon/push.svg' className={openQuestionsDetail[2][0] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
+                                </div>
+                                <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
+                            </div>
+                            <div 
+                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[2][1] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
+                                onClick={() => updateOpenQuestionsDetail(2,1)}
+                            >
+                                <div className='flex justify-between mb-[30px]'>
+                                    <h3 className='font-medium text-lg'>How do I create an account on Klothink?</h3>
+                                    <Image src='/icon/push.svg' className={openQuestionsDetail[2][1] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
+                                </div>
+                                <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
+                            </div>
+                            <div 
+                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[2][2] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
+                                onClick={() => updateOpenQuestionsDetail(2,2)}
+                            >
+                                <div className='flex justify-between mb-[30px]'>
+                                    <h3 className='font-medium text-lg'>Can I change my account information?</h3>
+                                    <Image src='/icon/push.svg' className={openQuestionsDetail[2][2] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
+                                </div>
+                                <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
+                            </div>
+                            <div 
+                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[2][3] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
+                                onClick={() => updateOpenQuestionsDetail(2,3)}
+                            >
+                                <div className='flex justify-between mb-[30px]'>
+                                    <h3 className='font-medium text-lg'>Are my personal details secure on Klothink?</h3>
+                                    <Image src='/icon/push.svg' className={openQuestionsDetail[2][3] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
+                                </div>
+                                <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
                             </div>
                         </div>
                     </div>
