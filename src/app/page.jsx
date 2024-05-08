@@ -415,7 +415,7 @@ export default function Home() {
                     </div>
                 </div>
                 {/* Questions? We Have Answers */}
-                <div className='grid grid-cols-1 gap-y-20 mb-[200px]'>
+                <div className='grid grid-cols-1 gap-y-20'>
                     <div className='flex justify-between'>
                         <div className='mr-[300px]'>
                             <div className='flex mb-9'>
@@ -568,6 +568,48 @@ export default function Home() {
                                     <Image src='/icon/push.svg' className={openQuestionsDetail[2][3] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
                                 </div>
                                 <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Seamless Experience. */}
+                <div className='grid grid-cols-1 gap-y-20 mb-[200px]'>
+                    <div className='flex justify-between'>
+                        <div className='mr-[300px]'>
+                            <div className='flex mb-9'>
+                                <h2 className='uppercase text-5xl font-semibold mr-2'>Seamless Experience.</h2>
+                                <p className='uppercase text-98989A text-nowrap text-right self-start'>How it Works ?</p>
+                            </div>
+                            <p className='text-656567 mt-6'>At Klothink, we've designed a straightforward shopping experience to make fashion accessible. Explore the journey from discovering the latest trends to receiving your handpicked styles with ease.</p>
+                        </div>
+                    </div>
+                    <div className='flex gap-y-[30px] gap-x-[20px] h-auto w-full rounded-[20px] bg-FCFCFD border border-F7F7F8 p-5'>
+                        <div className='rounded-2xl bg-white border border-F1F1F3 h-full w-full p-[30px]'>
+                            <p className='text-[80px] text-E4E4E7 text-semibold leading-[60px] mb-[30px]'>01</p>
+                            <div>
+                                <p className='text-333333 text-xl font-semibold mb-2'>Discover Trands</p>
+                                <p className='text-656567 text-lg font-normal'>Explore our curated collection of over 1000 styles</p>
+                            </div>
+                        </div>
+                        <div className='rounded-2xl bg-white border border-F1F1F3 h-full w-full p-[30px]'>
+                            <p className='text-[80px] text-E4E4E7 text-semibold leading-[60px] mb-[30px]'>02</p>
+                            <div>
+                                <p className='text-333333 text-xl font-semibold mb-2'>Secure Checkout</p>
+                                <p className='text-656567 text-lg font-normal'>Add your items to the cart and proceed to our secure checkout.</p>
+                            </div>
+                        </div>
+                        <div className='rounded-2xl bg-white border border-F1F1F3 h-full w-full p-[30px]'>
+                            <p className='text-[80px] text-E4E4E7 text-semibold leading-[60px] mb-[30px]'>03</p>
+                            <div>
+                                <p className='text-333333 text-xl font-semibold mb-2'>Swift Dispatch</p>
+                                <p className='text-656567 text-lg font-normal'>Experience 95% same-day dispatch on orders.</p>
+                            </div>
+                        </div>
+                        <div className='rounded-2xl bg-white border border-F1F1F3 h-full w-full p-[30px]'>
+                            <p className='text-[80px] text-E4E4E7 text-semibold leading-[60px] mb-[30px]'>04</p>
+                            <div>
+                                <p className='text-333333 text-xl font-semibold mb-2'>Unbox Happiness</p>
+                                <p className='text-656567 text-lg font-normal'>Receive your carefully packaged Klothink order.</p>
                             </div>
                         </div>
                     </div>
