@@ -3,10 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import React from 'react'
-import { useState } from "react";
+import { useState } from 'react'
 
 export default function Home() {
-    const [openQuestionsDetail, setOpenQuestionsDetail] = useState([[false,false,false,false],[false,false,false,false],[false,false,false,false]]);
+    const [openQuestionsDetail, setOpenQuestionsDetail] = useState([
+        [false, false, false, false],
+        [false, false, false, false],
+        [false, false, false, false],
+    ])
 
     const slideLeft = () => {
         let slider = document.getElementById('slider')
@@ -17,20 +21,19 @@ export default function Home() {
         let slider = document.getElementById('slider')
         slider.scrollLeft = slider.scrollLeft + 376.5
     }
-    
-    const updateOpenQuestionsDetail = (row,item) => {
-        const updated = [...openQuestionsDetail];
-        updated[row][item] = !updated[row][item];
-        setOpenQuestionsDetail(updated);
+
+    const updateOpenQuestionsDetail = (row, item) => {
+        const updated = [...openQuestionsDetail]
+        updated[row][item] = !updated[row][item]
+        setOpenQuestionsDetail(updated)
     }
 
-
     return (
-        <main className='min-[1700px]:mx-40 home-page-main'>
-            <div className='grid grid-cols-1 gap-[200px]'>
-                <div className='grid grid-cols-5 gap-20'>
-                    <div className='h-full grid col-span-3 content-between justify-between'>
-                        <div className=''>
+        <main className='home-page-main'>
+            <div className='min-[1700px]:mx-40 grid grid-cols-1 gap-[200px]'>
+                <div className='grid grid-cols-11 gap-x-20'>
+                    <div className='h-full grid col-span-6 content-between justify-between'>
+                        <div className='mb-20'>
                             <div className='flex relative justify-between'>
                                 <h1 className='uppercase text-5xl font-semibold'>Elevate Your Style with Klothink</h1>
                                 <p className='uppercase text-98989A text-nowrap text-right'>Style Redefined.</p>
@@ -70,12 +73,12 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className='col-span-2 relative rounded-[20px] bg-F1F1F3 home-page-main-image-area justify-self-end'>
+                    <div className='relative col-span-5 rounded-[20px] bg-F1F1F3 home-page-main-image-area justify-self-end'>
                         <Image
                             src='/home/sub_container.png'
                             alt='cart icon'
                             style={{
-                                width: '100%',
+                                width: 'auto',
                                 height: 'auto',
                             }}
                             width={500}
@@ -443,42 +446,28 @@ export default function Home() {
                     </div>
                     <div className='grid grid-cols-3 gap-[30px]'>
                         <div className='grid grid-cols-1 gap-[20px]'>
-                            <div
-                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[0][0] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
-                                onClick={() => updateOpenQuestionsDetail(0,0)}
-                            >
+                            <div className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[0][0] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`} onClick={() => updateOpenQuestionsDetail(0, 0)}>
                                 <div className='flex justify-between mb-[30px]'>
                                     <h3 className='font-medium text-lg'>Can I modify my order after placing it?</h3>
                                     <Image src='/icon/push.svg' className={`transition-all duration-500 ${openQuestionsDetail[0][0] ? 'rotate-45' : ''}`} alt='push icon' width={14} height={14} />
                                 </div>
-                                <p className='font-weight text-lg'>
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!
-                                </p>
+                                <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
                             </div>
-                            <div 
-                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[0][1] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
-                                onClick={() => updateOpenQuestionsDetail(0,1)}
-                            >
+                            <div className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[0][1] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`} onClick={() => updateOpenQuestionsDetail(0, 1)}>
                                 <div className='flex justify-between mb-[30px]'>
                                     <h3 className='font-medium text-lg'>How do I initiate a return?</h3>
                                     <Image src='/icon/push.svg' className={openQuestionsDetail[0][1] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
                                 </div>
                                 <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
                             </div>
-                            <div 
-                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[0][2] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
-                                onClick={() => updateOpenQuestionsDetail(0,2)}
-                            >
+                            <div className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[0][2] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`} onClick={() => updateOpenQuestionsDetail(0, 2)}>
                                 <div className='flex justify-between mb-[30px]'>
                                     <h3 className='font-medium text-lg'>How can I unsubscribe from the newsletter?</h3>
                                     <Image src='/icon/push.svg' className={openQuestionsDetail[0][2] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
                                 </div>
                                 <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
                             </div>
-                            <div 
-                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[0][3] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
-                                onClick={() => updateOpenQuestionsDetail(0,3)}
-                            >
+                            <div className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[0][3] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`} onClick={() => updateOpenQuestionsDetail(0, 3)}>
                                 <div className='flex justify-between mb-[30px]'>
                                     <h3 className='font-medium text-lg'>Do you offer exchanges for products?</h3>
                                     <Image src='/icon/push.svg' className={openQuestionsDetail[0][3] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
@@ -487,40 +476,28 @@ export default function Home() {
                             </div>
                         </div>
                         <div className='grid grid-cols-1 gap-[20px]'>
-                            <div 
-                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[1][0] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
-                                onClick={() => updateOpenQuestionsDetail(1,0)}
-                            >
+                            <div className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[1][0] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`} onClick={() => updateOpenQuestionsDetail(1, 0)}>
                                 <div className='flex justify-between mb-[30px]'>
                                     <h3 className='font-medium text-lg'>How can I place an order on Klothink?</h3>
                                     <Image src='/icon/push.svg' className={openQuestionsDetail[1][0] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
                                 </div>
                                 <p className='font-weight text-lg'>Ordering is easy! Simply browse our website, add items to your cart, and proceed to checkout. Follow the prompts to enter your details and complete your purchase.</p>
                             </div>
-                            <div 
-                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[1][1] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
-                                onClick={() => updateOpenQuestionsDetail(1,1)}
-                            >
+                            <div className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[1][1] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`} onClick={() => updateOpenQuestionsDetail(1, 1)}>
                                 <div className='flex justify-between mb-[30px]'>
                                     <h3 className='font-medium text-lg'>What payment methods do you accept?</h3>
                                     <Image src='/icon/push.svg' className={openQuestionsDetail[1][1] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
                                 </div>
                                 <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
                             </div>
-                            <div 
-                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[1][2] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
-                                onClick={() => updateOpenQuestionsDetail(1,2)}
-                            >
+                            <div className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[1][2] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`} onClick={() => updateOpenQuestionsDetail(1, 2)}>
                                 <div className='flex justify-between mb-[30px]'>
                                     <h3 className='font-medium text-lg'>How can I track my order?</h3>
                                     <Image src='/icon/push.svg' className={openQuestionsDetail[1][2] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
                                 </div>
                                 <p className='font-weight text-lg'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum debitis reprehenderit, nihil illo reiciendis pariatur atque, molestiae suscipit, quis ipsam at laboriosam dolor culpa et a necessitatibus. Quia, fugiat perspiciatis.</p>
                             </div>
-                            <div 
-                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[1][3] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
-                                onClick={() => updateOpenQuestionsDetail(1,3)}
-                            >
+                            <div className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[1][3] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`} onClick={() => updateOpenQuestionsDetail(1, 3)}>
                                 <div className='flex justify-between mb-[30px]'>
                                     <h3 className='font-medium text-lg'>What is your shipping policy?</h3>
                                     <Image src='/icon/push.svg' className={openQuestionsDetail[1][3] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
@@ -529,40 +506,28 @@ export default function Home() {
                             </div>
                         </div>
                         <div className='grid grid-cols-1 gap-[20px]'>
-                            <div 
-                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[2][0] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
-                                onClick={() => updateOpenQuestionsDetail(2,0)}
-                            >
+                            <div className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[2][0] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`} onClick={() => updateOpenQuestionsDetail(2, 0)}>
                                 <div className='flex justify-between mb-[30px]'>
                                     <h3 className='font-medium text-lg'>Are there any additional fees for returns?</h3>
                                     <Image src='/icon/push.svg' className={openQuestionsDetail[2][0] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
                                 </div>
                                 <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
                             </div>
-                            <div 
-                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[2][1] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
-                                onClick={() => updateOpenQuestionsDetail(2,1)}
-                            >
+                            <div className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[2][1] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`} onClick={() => updateOpenQuestionsDetail(2, 1)}>
                                 <div className='flex justify-between mb-[30px]'>
                                     <h3 className='font-medium text-lg'>How do I create an account on Klothink?</h3>
                                     <Image src='/icon/push.svg' className={openQuestionsDetail[2][1] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
                                 </div>
                                 <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
                             </div>
-                            <div 
-                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[2][2] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
-                                onClick={() => updateOpenQuestionsDetail(2,2)}
-                            >
+                            <div className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[2][2] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`} onClick={() => updateOpenQuestionsDetail(2, 2)}>
                                 <div className='flex justify-between mb-[30px]'>
                                     <h3 className='font-medium text-lg'>Can I change my account information?</h3>
                                     <Image src='/icon/push.svg' className={openQuestionsDetail[2][2] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
                                 </div>
                                 <p className='font-weight text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt sequi neque ea illum magnam voluptate harum, placeat eos corrupti asperiores molestiae delectus nobis necessitatibus natus dolor culpa consequatur doloremque!</p>
                             </div>
-                            <div 
-                                className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[2][3] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`}
-                                onClick={() => updateOpenQuestionsDetail(2,3)}
-                            >
+                            <div className={`transition-all duration-500 rounded-2xl border border-F1F1F3 p-[30px] cursor-pointer ${openQuestionsDetail[2][3] ? 'h-[250px]' : 'h-[88px]'} inline-block overflow-hidden`} onClick={() => updateOpenQuestionsDetail(2, 3)}>
                                 <div className='flex justify-between mb-[30px]'>
                                     <h3 className='font-medium text-lg'>Are my personal details secure on Klothink?</h3>
                                     <Image src='/icon/push.svg' className={openQuestionsDetail[2][3] ? 'transition-all duration-500 rotate-45' : 'transition-all duration-500'} alt='push icon' width={14} height={14} />
@@ -573,7 +538,7 @@ export default function Home() {
                     </div>
                 </div>
                 {/* Seamless Experience. */}
-                <div className='grid grid-cols-1 gap-y-20 mb-[200px]'>
+                <div className='grid grid-cols-1 gap-y-20 mb-[150px]'>
                     <div className='flex justify-between'>
                         <div className='mr-[300px]'>
                             <div className='flex mb-9'>
@@ -614,6 +579,66 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+            </div>
+            {/* Footer */}
+            <div className='px-[162px] flex border-y border-F1F1F3'>
+                <div className='grid grid-rows-2 gap-[50px] w-[480px] py-[80px] mr-[80px]'>
+                    <Image src='/navbar/logo.svg' alt='logo' width={100} height={100} />
+                    <div className='flex'>
+                        <input className='rounded-full w-[323px] h-[59px] bg-FCFCFD border border-F1F1F3 mr-2.5' type='text' name='name' />
+                        <button className='bg-FFD400 rounded-full px-6 py-5 content-center justify-center font-semibold w-[147px] h-[59px]'>Subscride</button>
+                    </div>
+                </div>
+                <div className='grid grid-cols-4 w-[800px] pl-[80px] py-[80px] border-l border-F1F1F3 h-full'>
+                    <div>
+                        <h3 className='pb-9 font-medium text-xl text-262626'>Home</h3>
+                        <span className='grid grid-rows-4 gap-y-[18px] text-lg text-656567 font-normal'>
+                            <p>Features</p>
+                            <p>Popular Products</p>
+                            <p>Testimonials</p>
+                            <p>FAQ</p>
+                        </span>
+                    </div>
+                    <div>
+                        <h3 className='pb-9 font-medium text-xl text-262626'>Menswear</h3>
+                        <span className='grid grid-rows-4 gap-y-[18px] text-lg text-656567 font-normal'>
+                            <p>Casual</p>
+                            <p>Formal</p>
+                            <p>Party</p>
+                            <p>Business</p>
+                        </span>
+                    </div>
+                    <div>
+                        <h3 className='pb-9 font-medium text-xl text-262626'>Womenswear</h3>
+                        <span className='grid grid-rows-4 gap-y-[18px] text-lg text-656567 font-normal'>
+                            <p>Casual</p>
+                            <p>Formal</p>
+                            <p>Party</p>
+                            <p>Business</p>
+                        </span>
+                    </div>
+                    <div>
+                        <h3 className='pb-9 font-medium text-xl text-262626'>Kidswear</h3>
+                        <span className='grid grid-rows-4 gap-y-[18px] text-lg text-656567 font-normal'>
+                            <p>Casual</p>
+                            <p>Formal</p>
+                            <p>Party</p>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {/* Terms & Conditions */}
+            <div className='flex justify-between my-10 mx-[162px]'>
+                <div className='flex'>
+                    <p className='mr-6 font-normal text-98989A text-lg'>Terms & Conditions</p>
+                    <p className='pl-6 border-l border-F1F1F3 font-normal text-98989A text-lg'>Privacy Policy</p>
+                </div>
+                <div className='flex gap-x-[21px] '>
+                    <Image className='cursor-pointer' src='/icon/facebookButton.svg' alt='logo' width={44} height={44} />
+                    <Image className='cursor-pointer' src='/icon/twitterButton.svg' alt='logo' width={44} height={44} />
+                    <Image className='cursor-pointer' src='/icon/LinkedButton.svg' alt='logo' width={44} height={44} />
+                </div>
+                <p>© 2024 Klothink. All rights reserved.</p>
             </div>
         </main>
     )
